@@ -4669,6 +4669,11 @@ w32_wnd_proc (HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
     case WM_KEYUP:
     case WM_SYSKEYUP:
       record_keyup (wParam, lParam);
+      if (Venable_low_level_key_events)
+	{
+	  signal_user_input ();
+	  my_post_msg( &wmsg, hwnd, WM_EMACS_LOW_LEVEL_KEY, wParam, lParam );
+	}
       goto dflt;
 
     case WM_KEYDOWN:
@@ -4694,6 +4699,12 @@ w32_wnd_proc (HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
       record_keydown (wParam, lParam);
       if (w32_use_fallback_wm_chars_method)
 	wParam = map_keypad_keys (wParam, (lParam & 0x1000000L) != 0);
+
+      if (Venable_low_level_key_events)
+	{
+	  signal_user_input ();
+	  my_post_msg( &wmsg, hwnd, WM_EMACS_LOW_LEVEL_KEY, wParam, lParam );
+	}
 
       windows_translate = 0;
 
