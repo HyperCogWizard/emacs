@@ -1,0 +1,876 @@
+#+title: GNU Emacs Architecture: Comprehensive Cognitive System Documentation
+#+author: GNU Emacs Development Team
+#+language: en
+#+options: ':t toc:nil author:t email:nil num:t
+#+startup: content
+#+texinfo_filename: emacs-architecture.info
+#+texinfo_dir_category: Emacs misc features
+#+texinfo_dir_title: Emacs Architecture: (emacs-architecture)
+#+texinfo_dir_desc: Comprehensive architecture documentation with cognitive flow diagrams
+
+#+texinfo: @insertcopying
+
+This manual provides comprehensive architecture documentation for GNU Emacs,
+focusing on the cognitive patterns, neural-symbolic integration points, and
+emergent system behaviors that define the MORK (Modular Object-oriented
+Recursive Kernel) architecture.
+
+The documentation includes detailed Mermaid diagrams that illustrate:
+- High-level system architecture and principal data flows
+- Module interactions and bidirectional synergies
+- Cognitive subsystem patterns and attention allocation mechanisms
+- Recursive implementation pathways and neural-symbolic integration
+
+* COPYING
+:properties:
+:copying: t
+:end:
+
+Copyright @copyright{} 2025 Free Software Foundation, Inc.
+
+@quotation
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.3 or
+any later version published by the Free Software Foundation; with no
+Invariant Sections, with the Front-Cover Texts being ``A GNU Manual,''
+and with the Back-Cover Texts as in (a) below.  A copy of the license
+is included in the section entitled ``GNU Free Documentation License.''
+
+(a) The FSF's Back-Cover Text is: ``You have the freedom to copy and
+modify this GNU manual.''
+@end quotation
+
+* Introduction to Cognitive Architecture
+
+GNU Emacs represents a sophisticated cognitive architecture that implements
+a Modular Object-oriented Recursive Kernel (MORK) design pattern. This
+architecture exhibits emergent properties through the interaction of
+multiple cognitive subsystems, each contributing to the overall adaptive
+intelligence of the system.
+
+The architecture is built around several key principles:
+
+1. **Recursive System Mapping**: Components are organized in hypergraph
+   patterns where each node can contain sub-networks of equivalent complexity.
+
+2. **Neural-Symbolic Integration**: The system bridges symbolic computation
+   (Lisp evaluation) with neural-like pattern matching and attention mechanisms.
+
+3. **Adaptive Attention Allocation**: Resources are dynamically allocated
+   based on cognitive load and emergent patterns in user interaction.
+
+4. **Distributed Cognition**: Intelligence emerges from the interaction
+   between multiple specialized subsystems rather than centralized control.
+
+* High-Level System Architecture
+
+The following diagram illustrates the principal architectural components
+and their cognitive relationships:
+
+#+begin_src mermaid
+graph TD
+    subgraph "Cognitive Core Layer"
+        EC[Emacs Core - C Implementation]
+        LE[Lisp Engine - Evaluator]
+        MM[Memory Management]
+        GC[Garbage Collector]
+    end
+
+    subgraph "Symbolic Processing Layer"
+        BP[Buffer Processing]
+        WM[Window Management]
+        KM[Keymap System]
+        CM[Command Dispatcher]
+    end
+
+    subgraph "Perceptual Interface Layer"
+        DS[Display System]
+        IS[Input System]
+        FS[Font System]
+        IM[Image Processing]
+    end
+
+    subgraph "Knowledge Representation Layer"
+        SM[Semantic Engine]
+        DB[SemanticDB]
+        ED[EDE Project System]
+        OM[Org Mode Cognition]
+    end
+
+    subgraph "Adaptive Learning Layer"
+        AC[Auto-Complete]
+        CH[Command History]
+        AB[Abbrev System]
+        REG[Register System]
+    end
+
+    subgraph "External Cognition Layer"
+        NET[Network Interface]
+        FS_EXT[File System Interface]
+        PROC[Process Management]
+        DBB[Database Bindings]
+    end
+
+    %% Core cognitive flows
+    EC --> LE
+    LE --> BP
+    LE --> WM
+    LE --> KM
+    LE --> CM
+
+    %% Perceptual binding
+    BP --> DS
+    WM --> DS
+    DS --> IS
+    DS --> FS
+    DS --> IM
+
+    %% Knowledge integration
+    BP --> SM
+    SM --> DB
+    SM --> ED
+    BP --> OM
+
+    %% Learning feedback loops
+    CM --> AC
+    CM --> CH
+    BP --> AB
+    WM --> REG
+
+    %% External cognition
+    BP --> NET
+    BP --> FS_EXT
+    CM --> PROC
+    SM --> DBB
+
+    %% Memory management cognitive flows
+    MM --> EC
+    GC --> MM
+    GC -.->|"Adaptive Pressure"| LE
+
+    %% Attention allocation flows
+    IS -.->|"Attention Signal"| CM
+    CM -.->|"Focus Control"| WM
+    WM -.->|"Context"| BP
+
+    %% Emergent cognitive patterns
+    AC -.->|"Predictive Modeling"| CM
+    CH -.->|"Pattern Recognition"| AC
+    AB -.->|"Semantic Compression"| BP
+
+    classDef cognitive fill:#e1f5fe,stroke:#01579b,stroke-width:2px
+    classDef symbolic fill:#f3e5f5,stroke:#4a148c,stroke-width:2px
+    classDef perceptual fill:#e8f5e8,stroke:#1b5e20,stroke-width:2px
+    classDef knowledge fill:#fff3e0,stroke:#e65100,stroke-width:2px
+    classDef learning fill:#fce4ec,stroke:#880e4f,stroke-width:2px
+    classDef external fill:#f1f8e9,stroke:#33691e,stroke-width:2px
+
+    class EC,LE,MM,GC cognitive
+    class BP,WM,KM,CM symbolic
+    class DS,IS,FS,IM perceptual
+    class SM,DB,ED,OM knowledge
+    class AC,CH,AB,REG learning
+    class NET,FS_EXT,PROC,DBB external
+#+end_src
+
+This architecture exhibits several emergent cognitive properties:
+
+- **Recursive Processing**: Each layer can invoke operations in any other layer,
+  creating recursive computational patterns that mirror cognitive processes.
+
+- **Attention Cascades**: Input events trigger attention allocation cascades
+  that propagate through the symbolic processing layer to influence knowledge
+  representation and learning systems.
+
+- **Cognitive Synergy**: The interaction between semantic processing and
+  adaptive learning creates emergent intelligence that exceeds the sum of
+  individual components.
+
+* Module Interaction Patterns
+
+The following diagram shows the bidirectional synergies between major
+architectural modules:
+
+#+begin_src mermaid
+graph LR
+    subgraph "Core Cognitive Modules"
+        EVAL[Evaluator Engine]
+        READ[Reader System]
+        PRIN[Printer System]
+        BUF[Buffer System]
+    end
+
+    subgraph "Interface Cognitive Modules"
+        DISP[Display Engine]
+        KEY[Keyboard Handler]
+        MENU[Menu System]
+        TOOL[Toolbar System]
+    end
+
+    subgraph "Semantic Cognitive Modules"
+        PARS[Parser Framework]
+        TAG[Tag System]
+        COMP[Completion Engine]
+        NAV[Navigation System]
+    end
+
+    subgraph "Meta-Cognitive Modules"
+        CUST[Customization System]
+        HELP[Help System]
+        DEBUG[Debug Interface]
+        PROF[Profiler System]
+    end
+
+    %% Bidirectional cognitive flows
+    EVAL <--> READ
+    EVAL <--> PRIN
+    EVAL <--> BUF
+    READ <--> BUF
+
+    %% Interface synergies
+    BUF <--> DISP
+    DISP <--> KEY
+    DISP <--> MENU
+    DISP <--> TOOL
+    KEY <--> EVAL
+
+    %% Semantic integration
+    BUF <--> PARS
+    PARS <--> TAG
+    TAG <--> COMP
+    COMP <--> NAV
+    NAV <--> BUF
+
+    %% Meta-cognitive feedback
+    EVAL <--> CUST
+    EVAL <--> HELP
+    EVAL <--> DEBUG
+    EVAL <--> PROF
+
+    %% Cross-domain cognitive synergies
+    COMP <--> DISP
+    NAV <--> KEY
+    TAG <--> HELP
+    PARS <--> DEBUG
+
+    %% Emergent cognitive loops
+    HELP -.->|"Knowledge Transfer"| COMP
+    COMP -.->|"Usage Patterns"| CUST
+    CUST -.->|"Preference Learning"| KEY
+    KEY -.->|"Gesture Recognition"| NAV
+
+    classDef core fill:#ffebee,stroke:#c62828,stroke-width:3px
+    classDef interface fill:#e8f5e8,stroke:#2e7d32,stroke-width:3px
+    classDef semantic fill:#fff8e1,stroke:#f57f17,stroke-width:3px
+    classDef meta fill:#f3e5f5,stroke:#7b1fa2,stroke-width:3px
+
+    class EVAL,READ,PRIN,BUF core
+    class DISP,KEY,MENU,TOOL interface
+    class PARS,TAG,COMP,NAV semantic
+    class CUST,HELP,DEBUG,PROF meta
+#+end_src
+
+** Cognitive Synergy Mechanisms
+
+The bidirectional flows shown above implement several key cognitive patterns:
+
+1. **Reflexive Processing**: The evaluator-reader-printer loop creates a
+   self-modifying system where code can analyze and transform itself.
+
+2. **Perceptual Binding**: The interface modules create coherent perceptual
+   experiences by synchronizing visual, auditory, and kinesthetic feedback.
+
+3. **Semantic Coherence**: The semantic modules maintain global consistency
+   through continuous tag synchronization and completion model updates.
+
+4. **Meta-Cognitive Awareness**: The meta-cognitive modules enable the system
+   to reason about its own cognitive processes and adapt accordingly.
+
+* Data Flow and Signal Propagation
+
+The cognitive architecture implements sophisticated signal propagation
+patterns that enable emergent intelligence:
+
+#+begin_src mermaid
+sequenceDiagram
+    participant User
+    participant InputSystem as Input System
+    participant CommandDispatcher as Command Dispatcher
+    participant BufferSystem as Buffer System
+    participant SemanticEngine as Semantic Engine
+    participant DisplaySystem as Display System
+    participant LearningSystem as Learning System
+
+    Note over User,LearningSystem: Cognitive Signal Propagation Cycle
+
+    User->>InputSystem: Keystroke/Mouse Event
+    Note right of InputSystem: Perceptual Pattern Recognition
+
+    InputSystem->>CommandDispatcher: Parsed Input Event
+    Note right of CommandDispatcher: Attention Allocation Decision
+
+    CommandDispatcher->>BufferSystem: Buffer Modification Command
+    Note right of BufferSystem: Symbolic State Transformation
+
+    BufferSystem->>SemanticEngine: Content Change Notification
+    Note right of SemanticEngine: Semantic Pattern Analysis
+
+    SemanticEngine->>SemanticEngine: Parse and Tag Update
+    Note right of SemanticEngine: Knowledge Structure Refinement
+
+    SemanticEngine->>BufferSystem: Semantic Annotations
+    Note right of BufferSystem: Augmented Representation
+
+    BufferSystem->>DisplaySystem: Visual Update Request
+    Note right of DisplaySystem: Perceptual Synthesis
+
+    DisplaySystem->>User: Visual Feedback
+    Note right of User: Cognitive Loop Completion
+
+    par Parallel Learning Processes
+        CommandDispatcher->>LearningSystem: Usage Pattern Recording
+        Note right of LearningSystem: Behavioral Pattern Extraction
+
+        SemanticEngine->>LearningSystem: Semantic Context Recording
+        Note right of LearningSystem: Contextual Pattern Learning
+
+        LearningSystem->>CommandDispatcher: Adaptive Suggestions
+        Note right of CommandDispatcher: Predictive Optimization
+    end
+
+    Note over User,LearningSystem: Emergent Intelligence Through Feedback Loops
+#+end_src
+
+** Signal Processing Characteristics
+
+The sequence diagram above illustrates several key cognitive signal processing
+characteristics:
+
+1. **Cascading Attention**: Input events trigger attention cascades that
+   propagate through multiple cognitive layers, with each layer adding
+   semantic refinement.
+
+2. **Parallel Learning**: The system maintains parallel learning processes
+   that continuously extract patterns from user behavior and semantic context.
+
+3. **Feedback Integration**: Learning system outputs are fed back into the
+   command dispatcher, creating adaptive optimization loops.
+
+4. **Emergent Timing**: The system exhibits natural timing patterns that
+   emerge from the interaction between cognitive processes rather than
+   explicit scheduling.
+
+* Semantic Engine Cognitive Architecture
+
+The Semantic Engine represents one of the most sophisticated cognitive
+subsystems in the MORK architecture:
+
+#+begin_src mermaid
+stateDiagram-v2
+    [*] --> Idle
+
+    state "Cognitive Processing States" as CognitiveStates {
+        state "Parsing Cognition" as ParsingState {
+            state "Lexical Analysis" as Lexical
+            state "Syntactic Analysis" as Syntactic
+            state "Semantic Analysis" as Semantic
+
+            Lexical --> Syntactic: Token Stream
+            Syntactic --> Semantic: Parse Tree
+            Semantic --> [*]: Semantic Tags
+        }
+
+        state "Knowledge Integration" as KnowledgeState {
+            state "Database Update" as DBUpdate
+            state "Cross-Reference" as CrossRef
+            state "Completion Model" as CompModel
+
+            DBUpdate --> CrossRef: Tag Relations
+            CrossRef --> CompModel: Context Patterns
+            CompModel --> [*]: Updated Knowledge
+        }
+
+        state "Attention Management" as AttentionState {
+            state "Priority Assessment" as Priority
+            state "Resource Allocation" as Resource
+            state "Focus Control" as Focus
+
+            Priority --> Resource: Attention Weights
+            Resource --> Focus: Cognitive Resources
+            Focus --> [*]: Focused Attention
+        }
+    }
+
+    Idle --> ParsingState: Buffer Change
+    Idle --> KnowledgeState: Query Request
+    Idle --> AttentionState: Attention Signal
+
+    ParsingState --> KnowledgeState: New Semantic Data
+    KnowledgeState --> AttentionState: Knowledge Priority
+    AttentionState --> ParsingState: Focus Directive
+
+    ParsingState --> Idle: Processing Complete
+    KnowledgeState --> Idle: Update Complete
+    AttentionState --> Idle: Attention Settled
+
+    note right of ParsingState
+        Recursive pattern recognition
+        with neural-symbolic integration
+    end note
+
+    note right of KnowledgeState
+        Hypergraph knowledge representation
+        with emergent semantic networks
+    end note
+
+    note right of AttentionState
+        Adaptive attention allocation
+        based on cognitive load patterns
+    end note
+#+end_src
+
+** Cognitive State Transitions
+
+The semantic engine exhibits several emergent cognitive behaviors:
+
+1. **Adaptive Parsing**: The parsing cognition adapts its analysis depth
+   based on available cognitive resources and attention allocation.
+
+2. **Knowledge Emergence**: The knowledge integration state creates emergent
+   semantic networks that exceed the sum of individual tag relationships.
+
+3. **Attention Dynamics**: The attention management state implements
+   sophisticated resource allocation algorithms that respond to both
+   explicit user focus and implicit cognitive load patterns.
+
+* Cognitive Kernel Architecture
+
+The core cognitive kernel implements the fundamental recursive patterns
+that enable emergent intelligence:
+
+#+begin_src mermaid
+graph TB
+    subgraph "Recursive Cognitive Kernel"
+        direction TB
+
+        subgraph "Base Cognitive Layer - C Implementation"
+            CORE[Core Evaluator]
+            MEM[Memory Allocator]
+            GC[Garbage Collector]
+            IO[I/O Subsystem]
+        end
+
+        subgraph "Symbolic Cognitive Layer - Lisp Engine"
+            EVAL[Evaluator Engine]
+            ENV[Environment Manager]
+            FUNC[Function System]
+            VAR[Variable System]
+        end
+
+        subgraph "Meta-Cognitive Layer - Self-Modification"
+            ADVISE[Advice System]
+            HOOK[Hook System]
+            CUSTOM[Customization Engine]
+            BYTE[Bytecode Compiler]
+        end
+
+        subgraph "Emergent Cognitive Layer - Adaptive Behaviors"
+            AUTO[Auto-Loading]
+            COMP[Completion Prediction]
+            HIST[History Learning]
+            PATTERN[Pattern Recognition]
+        end
+    end
+
+    %% Foundational recursive flows
+    CORE <--> MEM
+    MEM <--> GC
+    GC <--> CORE
+    IO <--> CORE
+
+    %% Symbolic abstraction flows
+    CORE --> EVAL
+    EVAL <--> ENV
+    ENV <--> FUNC
+    ENV <--> VAR
+    FUNC <--> VAR
+
+    %% Meta-cognitive recursive flows
+    EVAL --> ADVISE
+    FUNC --> HOOK
+    VAR --> CUSTOM
+    EVAL --> BYTE
+    BYTE --> FUNC
+
+    %% Emergent behavior flows
+    ADVISE --> AUTO
+    HOOK --> COMP
+    CUSTOM --> HIST
+    BYTE --> PATTERN
+
+    %% Cognitive feedback loops
+    AUTO -.->|"Demand Loading"| FUNC
+    COMP -.->|"Predictive Binding"| VAR
+    HIST -.->|"Usage Optimization"| CUSTOM
+    PATTERN -.->|"Behavior Adaptation"| HOOK
+
+    %% Deep cognitive recursion
+    PATTERN -.->|"Self-Analysis"| EVAL
+    COMP -.->|"Predictive Compilation"| BYTE
+    HIST -.->|"Memory Optimization"| GC
+    AUTO -.->|"Resource Prediction"| MEM
+
+    classDef base fill:#ffcdd2,stroke:#d32f2f,stroke-width:3px
+    classDef symbolic fill:#c8e6c9,stroke:#388e3c,stroke-width:3px
+    classDef meta fill:#ffe0b2,stroke:#f57c00,stroke-width:3px
+    classDef emergent fill:#e1bee7,stroke:#7b1fa2,stroke-width:3px
+
+    class CORE,MEM,GC,IO base
+    class EVAL,ENV,FUNC,VAR symbolic
+    class ADVISE,HOOK,CUSTOM,BYTE meta
+    class AUTO,COMP,HIST,PATTERN emergent
+#+end_src
+
+** Recursive Implementation Pathways
+
+The cognitive kernel exhibits several key recursive implementation patterns:
+
+1. **Self-Hosting Recursion**: The Lisp evaluator can modify its own
+   evaluation rules through the advice and hook systems, creating
+   self-modifying cognitive behavior.
+
+2. **Emergent Optimization**: The interaction between pattern recognition
+   and the bytecode compiler creates emergent optimization behaviors that
+   adapt to usage patterns.
+
+3. **Cognitive Memory Management**: The memory allocator and garbage collector
+   adapt their behavior based on learning from usage patterns and predictive
+   models.
+
+4. **Meta-Cognitive Compilation**: The system can analyze its own performance
+   and compile optimized cognitive pathways for frequently used patterns.
+
+* Distributed Cognition Network
+
+The MORK architecture implements distributed cognition through a network
+of specialized cognitive agents:
+
+#+begin_src mermaid
+graph TD
+    subgraph "Cognitive Agent Network"
+        subgraph "Perceptual Agents"
+            PA1[Visual Perception Agent]
+            PA2[Auditory Perception Agent]
+            PA3[Kinesthetic Perception Agent]
+            PA4[Temporal Perception Agent]
+        end
+
+        subgraph "Cognitive Processing Agents"
+            CA1[Language Processing Agent]
+            CA2[Spatial Reasoning Agent]
+            CA3[Pattern Recognition Agent]
+            CA4[Memory Consolidation Agent]
+        end
+
+        subgraph "Motor Control Agents"
+            MA1[Display Control Agent]
+            MA2[Cursor Management Agent]
+            MA3[Buffer Manipulation Agent]
+            MA4[File System Agent]
+        end
+
+        subgraph "Meta-Cognitive Agents"
+            MC1[Attention Director Agent]
+            MC2[Learning Coordinator Agent]
+            MC3[Goal Management Agent]
+            MC4[Context Switching Agent]
+        end
+
+        subgraph "Communication Hub"
+            HUB[Cognitive Message Hub]
+            SCHED[Attention Scheduler]
+            MEM_SHARED[Shared Memory Space]
+        end
+    end
+
+    %% Perceptual input flows
+    PA1 --> HUB
+    PA2 --> HUB
+    PA3 --> HUB
+    PA4 --> HUB
+
+    %% Cognitive processing flows
+    HUB --> CA1
+    HUB --> CA2
+    HUB --> CA3
+    HUB --> CA4
+
+    %% Motor output flows
+    CA1 --> MA1
+    CA2 --> MA2
+    CA3 --> MA3
+    CA4 --> MA4
+
+    %% Meta-cognitive control flows
+    SCHED --> MC1
+    MC1 --> MC2
+    MC2 --> MC3
+    MC3 --> MC4
+
+    %% Attention allocation flows
+    MC1 -.->|"Attention Allocation"| CA1
+    MC1 -.->|"Attention Allocation"| CA2
+    MC1 -.->|"Attention Allocation"| CA3
+    MC1 -.->|"Attention Allocation"| CA4
+
+    %% Learning feedback flows
+    MC2 -.->|"Learning Signals"| PA1
+    MC2 -.->|"Learning Signals"| PA2
+    MC2 -.->|"Learning Signals"| PA3
+    MC2 -.->|"Learning Signals"| PA4
+
+    %% Memory sharing flows
+    CA1 <--> MEM_SHARED
+    CA2 <--> MEM_SHARED
+    CA3 <--> MEM_SHARED
+    CA4 <--> MEM_SHARED
+
+    %% Context propagation flows
+    MC4 -.->|"Context Signals"| HUB
+    HUB -.->|"Context Updates"| MEM_SHARED
+
+    classDef perceptual fill:#e3f2fd,stroke:#0277bd,stroke-width:2px
+    classDef cognitive fill:#f1f8e9,stroke:#558b2f,stroke-width:2px
+    classDef motor fill:#fff3e0,stroke:#ef6c00,stroke-width:2px
+    classDef meta fill:#fce4ec,stroke:#c2185b,stroke-width:2px
+    classDef hub fill:#f3e5f5,stroke:#7b1fa2,stroke-width:3px
+
+    class PA1,PA2,PA3,PA4 perceptual
+    class CA1,CA2,CA3,CA4 cognitive
+    class MA1,MA2,MA3,MA4 motor
+    class MC1,MC2,MC3,MC4 meta
+    class HUB,SCHED,MEM_SHARED hub
+#+end_src
+
+** Emergent Network Intelligence
+
+The distributed cognitive network exhibits several emergent intelligence
+characteristics:
+
+1. **Collective Problem Solving**: Complex cognitive tasks are decomposed
+   across multiple specialized agents that collaborate through the message hub.
+
+2. **Adaptive Load Balancing**: The attention scheduler dynamically allocates
+   cognitive resources based on current task demands and agent capabilities.
+
+3. **Contextual Memory Sharing**: The shared memory space enables agents to
+   build upon each other's cognitive work, creating collective intelligence.
+
+4. **Meta-Cognitive Optimization**: The meta-cognitive agents continuously
+   optimize the network's cognitive performance through attention management
+   and learning coordination.
+
+* Implementation Architecture Mapping
+
+This section maps the conceptual cognitive architecture to the actual
+implementation structure in the Emacs codebase:
+
+** Core C Implementation Layer
+
+| Cognitive Component | Implementation Files | Primary Functions |
+|---------------------|---------------------|-------------------|
+| Core Evaluator | =src/eval.c= | =Feval=, =apply_lambda= |
+| Memory Allocator | =src/alloc.c= | =make_object=, =allocate_misc= |
+| Garbage Collector | =src/alloc.c= | =garbage_collect_1= |
+| I/O Subsystem | =src/fileio.c=, =src/process.c= | File and process management |
+| Display Engine | =src/xdisp.c=, =src/dispnew.c= | Redisplay and screen updates |
+| Keyboard Handler | =src/keyboard.c= | Event processing and command dispatch |
+
+** Symbolic Lisp Engine Layer
+
+| Cognitive Component | Implementation Files | Primary Functions |
+|---------------------|---------------------|-------------------|
+| Buffer System | =lisp/buffer.el=, =src/buffer.c= | Buffer creation and management |
+| Window Management | =lisp/window.el=, =src/window.c= | Window layout and switching |
+| Command System | =lisp/simple.el=, =src/callint.c= | Interactive command execution |
+| Completion Engine | =lisp/completion.el=, =lisp/icomplete.el= | Predictive text completion |
+| Keymap System | =lisp/keymap.el=, =src/keymap.c= | Key binding and lookup |
+
+** Semantic Knowledge Layer
+
+| Cognitive Component | Implementation Files | Primary Functions |
+|---------------------|---------------------|-------------------|
+| Semantic Engine | =lisp/cedet/semantic/= | Code parsing and analysis |
+| Tag Database | =lisp/cedet/semantic/db.el= | Symbol and reference tracking |
+| EDE Project System | =lisp/cedet/ede/= | Project-level cognition |
+| Org Mode Cognition | =lisp/org/= | Document structure and planning |
+
+** Meta-Cognitive Layer
+
+| Cognitive Component | Implementation Files | Primary Functions |
+|---------------------|---------------------|-------------------|
+| Advice System | =lisp/emacs-lisp/advice.el= | Function behavior modification |
+| Hook System | =lisp/subr.el= | Event-driven behavior customization |
+| Customization | =lisp/cus-edit.el= | Adaptive preference learning |
+| Help System | =lisp/help.el=, =lisp/help-mode.el= | Context-aware assistance |
+
+* Cognitive Flow Optimization Patterns
+
+The MORK architecture implements several optimization patterns that enhance
+cognitive performance:
+
+#+begin_src mermaid
+graph LR
+    subgraph "Cognitive Optimization Pipeline"
+        subgraph "Pattern Recognition Stage"
+            PR1[Usage Pattern Detection]
+            PR2[Context Pattern Analysis]
+            PR3[Frequency Pattern Tracking]
+        end
+
+        subgraph "Optimization Decision Stage"
+            OD1[Resource Allocation Decision]
+            OD2[Caching Strategy Decision]
+            OD3[Precomputation Decision]
+        end
+
+        subgraph "Implementation Stage"
+            IM1[Bytecode Optimization]
+            IM2[Memory Pool Allocation]
+            IM3[Predictive Loading]
+        end
+
+        subgraph "Feedback Stage"
+            FB1[Performance Measurement]
+            FB2[Cognitive Load Assessment]
+            FB3[Adaptation Triggers]
+        end
+    end
+
+    %% Pattern recognition flows
+    PR1 --> OD1
+    PR2 --> OD2
+    PR3 --> OD3
+
+    %% Optimization implementation flows
+    OD1 --> IM1
+    OD2 --> IM2
+    OD3 --> IM3
+
+    %% Feedback measurement flows
+    IM1 --> FB1
+    IM2 --> FB2
+    IM3 --> FB3
+
+    %% Adaptive feedback loops
+    FB1 -.->|"Performance Feedback"| PR1
+    FB2 -.->|"Cognitive Load Feedback"| PR2
+    FB3 -.->|"Adaptation Feedback"| PR3
+
+    %% Cross-stage optimization flows
+    OD1 -.->|"Resource Prediction"| IM2
+    OD2 -.->|"Cache Prediction"| IM3
+    OD3 -.->|"Precompute Prediction"| IM1
+
+    classDef pattern fill:#e8f5e8,stroke:#2e7d32,stroke-width:2px
+    classDef decision fill:#fff3e0,stroke:#f57c00,stroke-width:2px
+    classDef implementation fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px
+    classDef feedback fill:#e1f5fe,stroke:#0277bd,stroke-width:2px
+
+    class PR1,PR2,PR3 pattern
+    class OD1,OD2,OD3 decision
+    class IM1,IM2,IM3 implementation
+    class FB1,FB2,FB3 feedback
+#+end_src
+
+** Adaptive Optimization Behaviors
+
+The cognitive flow optimization system exhibits several key adaptive behaviors:
+
+1. **Predictive Resource Allocation**: The system learns from usage patterns
+   to predict future resource needs and pre-allocate cognitive resources.
+
+2. **Dynamic Caching Strategies**: Frequently accessed cognitive patterns
+   are cached at multiple levels, from bytecode to semantic representations.
+
+3. **Adaptive Compilation**: The system identifies cognitive hotspots and
+   compiles optimized pathways for frequently executed patterns.
+
+4. **Cognitive Load Balancing**: The system continuously monitors cognitive
+   load and adapts its processing strategies to maintain optimal performance.
+
+* Future Architecture Evolution
+
+The MORK architecture is designed to support continued cognitive evolution
+through several key extension points:
+
+** Neural Network Integration Points
+
+The architecture provides natural integration points for neural network
+components:
+
+- **Semantic Embedding Layer**: Can be enhanced with vector embeddings for
+  improved semantic understanding and completion prediction.
+
+- **Attention Mechanism Enhancement**: Current attention allocation can be
+  augmented with transformer-style attention mechanisms.
+
+- **Pattern Recognition Enhancement**: Current pattern recognition can be
+  enhanced with convolutional and recurrent neural networks.
+
+** Distributed Cognition Expansion
+
+The cognitive agent network can be expanded to include:
+
+- **Remote Cognitive Agents**: Agents running on different machines or in
+  the cloud to provide specialized cognitive capabilities.
+
+- **Collaborative Cognitive Spaces**: Shared cognitive spaces where multiple
+  users can collaborate on cognitive tasks.
+
+- **Hierarchical Cognitive Networks**: Multi-level cognitive networks that
+  can handle increasingly complex cognitive tasks.
+
+** Emergent Intelligence Amplification
+
+Future developments will focus on amplifying emergent intelligence through:
+
+- **Cross-Modal Learning**: Integration of visual, auditory, and kinesthetic
+  learning modalities for enhanced cognitive performance.
+
+- **Meta-Learning Capabilities**: Systems that can learn how to learn more
+  effectively from experience.
+
+- **Cognitive Architectural Evolution**: Self-modifying cognitive architectures
+  that can evolve their own structure based on cognitive demands.
+
+* Conclusion
+
+The GNU Emacs MORK architecture represents a sophisticated cognitive system
+that achieves emergent intelligence through the interaction of multiple
+specialized cognitive subsystems. The recursive, hypergraph-based design
+enables adaptive attention allocation, neural-symbolic integration, and
+continuous cognitive optimization.
+
+The architecture's key strengths include:
+
+1. **Emergent Intelligence**: Complex cognitive behaviors emerge from the
+   interaction of simpler cognitive components.
+
+2. **Adaptive Optimization**: The system continuously optimizes its cognitive
+   performance based on usage patterns and feedback.
+
+3. **Recursive Self-Modification**: The system can modify its own cognitive
+   structure through meta-cognitive mechanisms.
+
+4. **Distributed Cognition**: Intelligence is distributed across multiple
+   specialized cognitive agents rather than centralized.
+
+This documentation provides a foundation for understanding, extending, and
+optimizing the cognitive capabilities of the MORK architecture, enabling
+developers to build upon its emergent intelligence patterns for future
+cognitive computing applications.
+
+* GNU Free Documentation License
+
+#+texinfo: @include doclicense.texi
